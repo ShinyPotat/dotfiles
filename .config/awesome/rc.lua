@@ -739,7 +739,7 @@ awful.rules.rules = {
     { rule = { class = "discord" },
        properties = { screen = 1, tag = "DIS" } },
     
-    { rule = { class = "[Ss]potify" },
+    { rule = { class = "Spotify" },
        properties = { screen = 1, tag = "MUS" } },
     
     { rule = { class = "Code" },

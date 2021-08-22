@@ -175,7 +175,7 @@ local markup = lain.util.markup
 local separator = wibox.widget {
     widget = wibox.widget.separator,
     orientation = "vertical",
-    forced_width = 10,
+    forced_width = 15,
     color = "#ffffff",
     visible = true
  }
