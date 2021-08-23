@@ -826,6 +826,5 @@ run_once({
     "compton",
     "~/.screenlayout/external-monitor.sh",
     "polychromatic-helper --autostart",
-    "sh -c '/usr/bin/nvidia-settings --load-config-only'",
-    "noisetorch -i"
- })
+    "noisetorch -i",
+})
