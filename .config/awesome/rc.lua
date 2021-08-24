@@ -258,10 +258,10 @@ globalkeys = mytable.join(
               {description = "destroy all notifications", group = "hotkeys"}),
     -- Take a screenshot
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
-    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("sleep 0.5 && scrot -s -e 'mv $f ~/Pictures/screenshots'") end,
+    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("sleep 0.5 && scrot -s -e 'xclip -selection clipboard -target image/png -i $f && mv $f ~/Pictures/screenshots'") end,
               {description = "take a screenshot on selection", group = "hotkeys"}),
     
-    awful.key({ modkey }, "Print", function() awful.util.spawn_with_shell("sleep 0.5 && scrot -e 'mv $f ~/Pictures/screenshots'") end,
+    awful.key({ modkey }, "Print", function() awful.util.spawn_with_shell("sleep 0.5 && scrot -e 'xclip -selection clipboard -target image/png -i $f && mv $f ~/Pictures/screenshots'") end,
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
