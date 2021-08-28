@@ -1,5 +1,6 @@
 function fish_greeting
-	neofetch
-end
 
+end
 alias ls="exa --icons --group-directories-first"
+set theme_color_scheme nord
+neofetch
