@@ -821,10 +821,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- }}}
 
-run_once({ 
-    "~/.fehbg",
-    "compton",
-    "~/.screenlayout/external-monitor.sh",
-    "polychromatic-helper --autostart",
-    "noisetorch -i",
-})
+awful.spawn.with_shell("~/.fehbg")
+awful.spawn.with_shell("compton")
+awful.spawn.with_shell("~/.screenlayout/external-monitor.sh")
+awful.spawn.with_shell("polychromatic-helper --autostart")
+awful.spawn.with_shell("noisetorch -i")
+
