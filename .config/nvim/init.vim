@@ -46,6 +46,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+""" Python syntax
+let g:python_highlight_all = 1
 
 """ NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
