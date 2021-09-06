@@ -96,11 +96,11 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'
+    sleep 0.5 && scrot -e 'xclip -selection clipboard -target image/png -i $f && mv $f $$(xdg-user-dir PICTURES)/Screenshots'
 
-#screeenshooter
+#screenshooter
 ctrl + Print
-     xfce4-screenshooter
+     sleep 0.5 && xfce4-screenshooter -r -c 
 
 #################################################################
 #     FUNCTION KEYS
