@@ -25,3 +25,4 @@ picom --config $HOME/.config/bspwm/picom.conf &
 run volumeicon &
 nitrogen --restore &
 polychromatic-helper --autostart &
+unclutter &

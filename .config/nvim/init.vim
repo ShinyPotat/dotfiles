@@ -1,59 +1,31 @@
-""" ShinyPotat's Neovim init.vim
-
-""" Vim-Plug
-call plug#begin()
-
-" Themes
-Plug 'arcticicestudio/nord-vim'
-
-" Plugins
-Plug 'itchyny/lightline.vim'                       " Lightline statusbar
-Plug 'scrooloose/nerdtree'                         " Nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
-Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
-Plug 'vim-python/python-syntax'                    " Python hihglighting
-Plug 'ap/vim-css-color'                            " Color previews for CSS
-
-call plug#end()
-
-""" Main Configurations
-filetype plugin indent on
-set wildmenu
-set hidden
+set number
+set mouse=a
+set numberwidth=1
+set clipboard=unnamed
+syntax on
+set showcmd
+set ruler
+set cursorline
+set encoding=utf-8
+set showmatch
 set termguicolors
+set sw=2
 set relativenumber
-set clipboard=unnamedplus
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-set mouse=nicr
+so ~/.config/nvim/plugins.vim
+so ~/.config/nvim/plugin-config.vim
+so ~/.config/nvim/maps.vim
 
-""" Coloring
 colorscheme nord
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+highlight Normal ctermbg=NONE
+set laststatus=2
+set noshowmode
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+au BufNewFile,BufRead *.html set filetype=htmldjango
+lua require'colorizer'.setup()
 
-""" Keybindings
-let mapleader=' '
-" Open terminal inside NeoVim
-map <Leader>tt :vnew term://fish<CR>
-" Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-""" Python syntax
-let g:python_highlight_all = 1
-
-""" NERDTree
-map <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeShowLineNumbers=1
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI = 1
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
 

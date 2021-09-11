@@ -1,32 +1,22 @@
 #!/bin/sh
 
-set -xv
-exec 2>>/tmp/bspwm.log
-
-# StartUp Applications
+#StartUp Applications
 $HOME/.config/bspwm/autostart.sh
 
 #fix for moving spotify to specific workspace
-#bspc config external_rules_command ~/.config/bspwm/scripts/external_rules_command
+bspc config external_rules_command ~/.config/bspwm/scripts/external_rules_command
 
 #BSPWM configuration
-#bspc config border_radius       8
 bspc config border_width         0
 bspc config window_gap           16
 bspc config presel_feedback_color	"#5e81ac"
 
 #Single monitor
 bspc monitor eDP-1-1 -r
-bspc monitor -d 1 2 3 4 5
+bspc monitor -d 1 2 3 4 5 6
 
-#Spotify fix  --move desktop 10
-#sleep 1
-#wmctrl -r Spotify -t 10
-#exit
-
-#polybar hidden when fullscreen for vlc, youtube, mpv ...
-#find out the name of your monitor with xrandr
-#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_DP-1)
-#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_HDMI1)
-#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_HDMI2)
+#Rules
+bspc rule -a discord desktop=^5 follow=on
+bspc rule -a firefox desktop=^1 follow=on
+bspc rule -a Zathura state=tiled
 

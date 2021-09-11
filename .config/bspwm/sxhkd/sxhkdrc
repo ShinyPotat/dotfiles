@@ -16,7 +16,7 @@ super + x
 
 #Rofi
 super + r
-    rofi -no-auto-select -location 2 -yoffset 0 -width 80 -show run 
+    rofi -no-auto-select -location 2 -yoffset 0 -width 80 -show run
 
 #Pavucontrol
 super + v
@@ -32,7 +32,7 @@ super + Escape
 
 # File-Manager
 super + f
-    thunar
+    nautilus
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -100,7 +100,7 @@ Print
 
 #screenshooter
 ctrl + Print
-     sleep 0.5 && xfce4-screenshooter -r -c 
+     sleep 0.5 && scrot -s -e 'xclip -selection clipboard -target image/png -i $f && rm $f' 
 
 #################################################################
 #     FUNCTION KEYS
@@ -277,7 +277,7 @@ super + ctrl + {_,shift +}{1-9}
 
 #Focus selected desktop
 alt + Tab
-	bspc desktop -f '^{1-9,10}'
+	rofi -no-auto-select -location 2 -yoffset 0 -width 80 -show window
 
 #Rotate desktop
 alt + space
@@ -289,7 +289,7 @@ alt + space
 
 # Expand tiled space
 alt + shift + {h,j,k,l}
-	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+    bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
 
 #################################################################
 # CTRL + ALT KEYS
