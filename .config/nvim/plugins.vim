@@ -4,12 +4,14 @@ call plug#begin()
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " status bar
 Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
 " Themes
+Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 
 " Tree
@@ -45,5 +47,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-repeat'
+
+Plug 'andweeb/presence.nvim'
 
 call plug#end()

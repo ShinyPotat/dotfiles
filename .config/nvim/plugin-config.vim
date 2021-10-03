@@ -17,6 +17,8 @@ let g:lightline = {
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'kitestatus': 'kite#statusline',
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
       \ },
       \ 'colorscheme': 'nord',
       \ 'subseparator': {
@@ -24,6 +26,14 @@ let g:lightline = {
       \   'right': ''
       \ }
       \}
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 "  nerdtree
 let NERDTreeShowHidden=1
@@ -51,6 +61,19 @@ let g:tmux_navigator_no_mappings = 1
 
 " coc
 autocmd FileType scss setl iskeyword+=@-@
+
+" Discord
+let g:presence_neovim_image_text   = "Neovim"
+
+" Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
 
 " vim fugitive
 command! -bang -nargs=? -complete=dir GFiles
